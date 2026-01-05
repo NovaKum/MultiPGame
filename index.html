@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arcade Racing - Multiplayer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Start Screen -->
+    <div id="startScreen" class="screen">
+        <div class="neon-lights">
+            <div class="neon-bar bar-1"></div>
+            <div class="neon-bar bar-2"></div>
+            <div class="neon-bar bar-3"></div>
+            <div class="neon-bar bar-4"></div>
+            <div class="neon-bar bar-5"></div>
+            <div class="neon-bar bar-6"></div>
+        </div>
+        <div class="reflective-floor"></div>
+        <div class="start-container">
+            <div class="main-content">
+                <h1 class="title">NEED FOR SPEED</h1>
+                <div class="player-inputs">
+                    <div class="input-group">
+                        <label for="player1Name">PLAYER 1 (WASD)</label>
+                        <input type="text" id="player1Name" placeholder="Enter Name" maxlength="15">
+                        <span class="input-hint">Black Bike</span>
+                    </div>
+                    <div class="input-group">
+                        <label for="player2Name">PLAYER 2 (ARROW KEYS)</label>
+                        <input type="text" id="player2Name" placeholder="Enter Name" maxlength="15">
+                        <span class="input-hint">White Bike</span>
+                    </div>
+                </div>
+                <button id="startBtn" class="start-btn">
+                    <span>START GAME</span>
+                </button>
+                <div class="controls-info">
+                    <p>Goal: Drive as far as possible! Higher score wins!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen hidden">
+        <canvas id="gameCanvas"></canvas>
+        <div class="game-ui">
+            <div class="score-board">
+                <div class="player-score">
+                    <span id="player1DisplayName">Player 1</span>: <span id="player1Score">0</span>
+                    <span id="player1Record" class="record-badge hidden">NEW RECORD!</span>
+                </div>
+                <div class="player-score">
+                    <span id="player2DisplayName">Player 2</span>: <span id="player2Score">0</span>
+                    <span id="player2Record" class="record-badge hidden">NEW RECORD!</span>
+                </div>
+            </div>
+            <div class="level-info">
+                <span id="levelName">HIGHWAY</span>
+                <span id="speed">Speed: 100%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameOverScreen" class="screen hidden">
+        <div class="game-over-container">
+            <h1 class="title">GAME OVER</h1>
+            <div class="final-scores">
+                <div class="final-score">
+                    <span id="finalPlayer1Name">Player 1</span>: <span id="finalPlayer1Score">0</span>
+                </div>
+                <div class="final-score">
+                    <span id="finalPlayer2Name">Player 2</span>: <span id="finalPlayer2Score">0</span>
+                </div>
+            </div>
+            <div id="winnerDisplay" class="winner"></div>
+            <div id="recordDisplay" class="record-display"></div>
+            <button id="restartBtn" class="restart-btn">RESTART GAME</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
